@@ -1,0 +1,10 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "Ryan Breich",
+  "description": {
+    "": "Generates user parameters and skeleton layout sketches for a six-wheel rocker-bogie rover."
+  },
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}
