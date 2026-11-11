@@ -27,7 +27,7 @@ PARAMS = [
     ('wheel_d',          '60 mm',  'mm', 'Wheel outer diameter'),
     ('wheel_w',          '25 mm',  'mm', 'Wheel width'),
     ('wheel_pitch',      '100 mm', 'mm', 'Axle spacing front-middle and middle-rear'),
-    ('track_w',          '240 mm', 'mm', 'Wheel centre to wheel centre, left-right'),
+    ('track_w',          '275 mm', 'mm', 'Wheel centre to wheel centre, left-right (sized for N20 + encoder outboard of bogie)'),
     ('bogie_pivot_h',    '35 mm',  'mm', 'Bogie pivot height above axle line'),
     ('rocker_pivot_h',   '65 mm',  'mm', 'Rocker pivot height above axle line'),
     ('rocker_pivot_x',   '50 mm',  'mm', 'Rocker pivot X position, forward of middle axle'),
@@ -45,8 +45,9 @@ PARAMS = [
     ('arm_w',            '14 mm',  'mm', 'Rocker/bogie arm width (in side view)'),
     ('arm_t',            '8 mm',   'mm', 'Rocker/bogie arm thickness (Y direction)'),
     ('arm_gap',          '2 mm',   'mm', 'Clearance between body side and rocker'),
-    ('fit_press',        '0.15 mm', 'mm', 'Bearing seat interference allowance (tune with test print)'),
-    ('fit_clear',        '0.3 mm', 'mm', 'Clearance for sliding/bolt fits'),
+    ('bearing_lip_d',    '11 mm',  'mm', 'Lip hole behind bearing seat; bears on outer ring (ID 13.8), clears inner ring (OD 7.7)'),
+    ('fit_seat',         '0.1 mm', 'mm', 'Added to bearing OD for FDM seat (FDM holes print small); tune with test print'),
+    ('fit_clear',        '0.5 mm', 'mm', 'Clearance for bolt holes (FDM)'),
 ]
 
 
@@ -55,9 +56,12 @@ def ensure_params(design):
     for name, expr, units, comment in PARAMS:
         p = up.itemByName(name)
         if p is None:
-            up.add(name, adsk.core.ValueInput.createByString(expr), units, comment)
+            p = up.add(name, adsk.core.ValueInput.createByString(expr), units, comment)
+            if p is None:
+                raise RuntimeError('Could not create user parameter: ' + name)
         elif RESET_PARAMS:
             p.expression = expr
+        p.isFavorite = True
 
 
 def read_params(design):
@@ -159,7 +163,7 @@ def draw_top(comp, d):
     return sk
 
 
-def sanity_report(d):
+def sanity_report(d, design):
     mm = lambda v: v * 10.0
     r = d['wheel_d'] / 2
     rocker_z = r + d['rocker_pivot_h']
@@ -170,6 +174,7 @@ def sanity_report(d):
 
     lines = [
         'Skeleton generated.',
+        'User parameters in this design: {}'.format(design.userParameters.count),
         '',
         'Overall footprint: {:.0f} x {:.0f} mm (L x W)'.format(mm(max(overall_len, d['body_len'])), mm(overall_w)),
         'Body-to-wheel side gap (for arms + motors): {:.1f} mm'.format(mm(side_gap)),
@@ -212,7 +217,7 @@ def run(context):
         draw_side(comp, d)
         draw_top(comp, d)
 
-        ui.messageBox(sanity_report(d), 'Rover Skeleton')
+        ui.messageBox(sanity_report(d, design), 'Rover Skeleton')
     except:
         if ui:
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
