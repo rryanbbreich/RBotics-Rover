@@ -20,4 +20,4 @@ Lesson learned: Fusion's newer design types separate Part and Assembly designs. 
 
 Next: stepped bearing seat at the rocker pivot, M5 clearance hole at the bogie pivot, N20 motor clamp at the front axle.
 
-![Left rocker over skeleton layout](2026-11-11-Rocker-L.png)
+![Left rocker over skeleton layout](2026-11-11-rocker-L.png)
