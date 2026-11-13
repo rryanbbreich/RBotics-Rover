@@ -21,3 +21,14 @@ Lesson learned: Fusion's newer design types separate Part and Assembly designs. 
 Next: stepped bearing seat at the rocker pivot, M5 clearance hole at the bogie pivot, N20 motor clamp at the front axle.
 
 ![Left rocker over skeleton layout](2026-11-11-rocker-L.png)
+
+## 2026-11-13 - Both rockers complete
+
+Modelled Rocker_R as a mirrored counterpart to Rocker_L (a true mirror is needed so both bearing seats face the body). Both rockers now have the stepped 625ZZ seat at the rocker pivot and an M5 clearance hole at the bogie pivot.
+
+- Wrote `RockerParams`, a Fusion script that adds the shared rocker/bogie parameters to a new Part design
+- Track width set to 275 mm to leave room for N20 motors outboard of the bogie
+- Bearing fit test block designed; awaiting printer induction
+- Parts ordered: 625ZZ bearings, M5 socket cap kit (see `docs/BOM.md`)
+
+![Both rockers, top view](2026-11-13-rockers.png)
