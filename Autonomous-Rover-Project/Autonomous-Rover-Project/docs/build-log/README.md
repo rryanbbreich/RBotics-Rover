@@ -24,6 +24,16 @@ Next: stepped bearing seat at the rocker pivot, M5 clearance hole at the bogie p
 
 ## 2026-11-13 - Both rockers complete
 
+## 2026-11-16 - Bogie_L and pivot nut traps
+
+Modelled Bogie_L outboard of Rocker_L, carrying the middle and rear wheels. Its pivot holds a 625ZZ bearing with the seat facing the rocker.
+
+- Found that a nut on the rocker side of the bogie pivot would hit the body (only a 2 mm gap), so each rocker now has an M5 hex nut trap (8.3 mm AF x 5 mm deep) on its body-side face. The pivot is a single M5 x 16 mm bolt fitted from outside the bogie, so no 30 mm bolts are needed.
+- Pivot hole and nut trap were initially placed at the front axle (A) instead of the bogie pivot (C) on both rockers. Caught during an alignment check in Front view and moved to C.
+- Bogie bearing seat, rocker C holes and nut traps now share one axis.
+
+![Rocker_L and Bogie_L pivot](2026-11-16-bogie-l.png)
+
 Modelled Rocker_R as a mirrored counterpart to Rocker_L (a true mirror is needed so both bearing seats face the body). Both rockers now have the stepped 625ZZ seat at the rocker pivot and an M5 clearance hole at the bogie pivot.
 
 - Wrote `RockerParams`, a Fusion script that adds the shared rocker/bogie parameters to a new Part design
@@ -31,4 +41,3 @@ Modelled Rocker_R as a mirrored counterpart to Rocker_L (a true mirror is needed
 - Bearing fit test block designed; awaiting printer induction
 - Parts ordered: 625ZZ bearings, M5 socket cap kit (see `docs/BOM.md`)
 
-![Both rockers, top view](2026-11-13-rockers.png)
