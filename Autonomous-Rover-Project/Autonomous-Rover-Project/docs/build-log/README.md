@@ -41,3 +41,9 @@ Modelled Rocker_R as a mirrored counterpart to Rocker_L (a true mirror is needed
 - Bearing fit test block designed; awaiting printer induction
 - Parts ordered: 625ZZ bearings, M5 socket cap kit (see `docs/BOM.md`)
 
+## 2026-11-16 - Suspension joints
+
+Bogie_R modelled, completing all four suspension arms. Added as-built revolute joints at the rocker pivots (to the skeleton, standing in for the chassis) and at the bogie pivots, with rotation limits (rockers ±20°, bogies ±25°). All four pivots articulate on the correct axes.
+
+![Suspension articulation 1](2026-11-16-joints-1.gif)
+![Suspension articulation 2](2026-11-16-joints-2.gif)
