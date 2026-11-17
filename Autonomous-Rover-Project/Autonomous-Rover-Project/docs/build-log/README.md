@@ -47,3 +47,9 @@ Bogie_R modelled, completing all four suspension arms. Added as-built revolute j
 
 ![Suspension articulation 1](2026-11-16-joints-1.gif)
 ![Suspension articulation 2](2026-11-16-joints-2.gif)
+
+## 2026-11-17 - Differential bar
+
+Added a top-mounted differential bar (170 mm, 625ZZ centre pivot at 135 mm) and 30 mm lugs on both rockers. Motion links couple the two rocker joints (equal and opposite) and the bar (ratio 30/85 from lug length over bar half-length), so the body stays level as the suspension articulates. Physical link rods with M3 ball links to follow.
+
+![Differential bar in action](2026-11-17-differential.gif)
