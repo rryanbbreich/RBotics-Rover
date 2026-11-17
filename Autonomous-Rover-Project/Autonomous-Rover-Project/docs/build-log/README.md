@@ -53,3 +53,11 @@ Bogie_R modelled, completing all four suspension arms. Added as-built revolute j
 Added a top-mounted differential bar (170 mm, 625ZZ centre pivot at 135 mm) and 30 mm lugs on both rockers. Motion links couple the two rocker joints (equal and opposite) and the bar (ratio 30/85 from lug length over bar half-length), so the body stays level as the suspension articulates. Physical link rods with M3 ball links to follow.
 
 ![Differential bar in action](2026-11-17-differential.gif)
+
+## 2026-11-17 - Rocker pivot moved for even load distribution
+
+A design check showed the rocker pivot at x = +50 mm put 67% of each side's weight on the front wheel (17% each on middle and rear). Moved the pivot to x = 0, directly above the middle wheel, giving an equal 1/3 split. The differential bar, lugs and pivot post moved with it; the front deck became a central bridge, and the body will now have front and rear lids.
+
+Also fixed Rocker_R's sketch, which was snapped to skeleton geometry rather than dimensioned with parameters, and a 3 mm error in point A's height on Rocker_L.
+
+![Adjusted Rocker positions](2026-11-17-rocker-positions.png)
