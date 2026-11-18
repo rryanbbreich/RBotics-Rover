@@ -61,3 +61,9 @@ A design check showed the rocker pivot at x = +50 mm put 67% of each side's weig
 Also fixed Rocker_R's sketch, which was snapped to skeleton geometry rather than dimensioned with parameters, and a 3 mm error in point A's height on Rocker_L.
 
 ![Adjusted Rocker positions](2026-11-17-rocker-positions.png)
+
+# 2026-11-18 - Front and back lids, mast for camera created.
+
+Created the front and back lids, which are easily removable, with screw holes at the corners. The back lid also has ventilation panels, which will allow the raspberry pi to "breathe". The mast which holds the camera (also one of the most recognisable features of the perseverance rover) is placed towards the front right corner, again with screw holes to hold it down, since it was made as a new body.
+
+![finished rover with mast and lids](2026-11-18-finished-rover.png)
